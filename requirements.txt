@@ -1,0 +1,17 @@
+# Shared project dependencies.
+# Pin versions here once the environment is settled. Per-experiment extras go in
+# exp/<experiment>/requirements.txt.
+
+numpy
+pandas
+scikit-learn
+lightgbm
+polars
+pyarrow
+duckdb
+matplotlib
+seaborn
+tqdm
+openpyxl
+python-docx
+pypdf

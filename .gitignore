@@ -1,0 +1,93 @@
+# Python environments
+venv-dischem/
+.venv/
+venv/
+env/
+ENV/
+
+# Python caches and build artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+*.egg
+pip-wheel-metadata/
+
+# Test, coverage, type-checking and lint caches
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+.pyre/
+.tox/
+.nox/
+.cache/
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Editors and operating systems
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Local configuration and logs
+.env
+.env.*
+.kaggle/
+kaggle.json
+.aws/
+credentials.json
+secrets.json
+*.pem
+*.key
+*.log
+!results/*/run.log
+
+# Competition data is downloaded locally; do not commit it.
+dataset/*
+!dataset/.gitkeep
+
+# Product images and their mapping are competition data and too large for git.
+# Unanchored so a copy anywhere in the tree stays ignored.
+product_images/
+*.jpg
+*.jpeg
+*.webp
+
+# EDA caches; small aggregate tables and figures are reviewable outputs.
+/cache/
+eda/cache/
+
+# Large generated experiment artifacts
+exp/*/artifacts/
+results/*/model/
+results/*/models/
+results/*/cache/
+results/*/.cache/
+*.zip
+*.tar
+*.tar.gz
+*.pkl
+*.joblib
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.onnx
+*.parquet
+*.feather
+*.csv.gz
+
+# Scratch files
+scratch/
