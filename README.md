@@ -19,7 +19,7 @@ Competition workspace for the Zindi Dis-Chem Product Data Enrichment Challenge: 
 ## Quick start
 
 ```bash
-source venv-dischem/bin/activate
+source venv-dis-chem-product-enrichment/bin/activate
 python exp/001_descriptive_name/run.py
 ```
 

@@ -1,5 +1,5 @@
 # Python environments
-venv-dischem/
+venv-*/
 .venv/
 venv/
 env/

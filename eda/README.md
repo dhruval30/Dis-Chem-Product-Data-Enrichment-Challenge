@@ -11,7 +11,7 @@ EDA must not fit competition models or create submissions. Keep `dataset/` read-
 Run the reproducible analysis from the repository root:
 
 ```sh
-venv-dischem/bin/python eda/run_eda.py --seed 42 --out-dir eda
+venv-dis-chem-product-enrichment/bin/python eda/run_eda.py --seed 42 --out-dir eda
 ```
 
 Dependencies are pinned in `requirements.txt`. Each run should record seed, package versions, input file sizes and modification times in a metadata file next to the outputs.

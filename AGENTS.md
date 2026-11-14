@@ -13,7 +13,7 @@ Competition workspace. The official pages are mirrored in `challenge-info/`. Fil
 - `results/` mirrors experiments, for example `results/001_descriptive_name/`, and contains all outputs for its corresponding experiment.
 - `EXPERIMENT_LEDGER.md` records every experiment.
 - `lb.md` is a snapshot of the public leaderboard. Re-scrape it to refresh.
-- `venv-dischem/` is the project virtual environment. It is gitignored.
+- `venv-dis-chem-product-enrichment/` is the project virtual environment. It is gitignored.
 
 ## Experiment ledger
 
