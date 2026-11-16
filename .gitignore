@@ -91,3 +91,5 @@ results/*/.cache/
 
 # Scratch files
 scratch/
+
+models/

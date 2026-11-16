@@ -1,0 +1,29 @@
+extends: ../config.yaml
+model:
+  profile: m2_safe
+  compact_prompts: true
+  max_images: 1
+  batch_size: 1
+  image_max_side: 512
+  processor_max_pixels: 262144
+  processor_min_pixels: 16384
+  max_input_chars: 4000
+  max_prompt_tokens: 1024
+  max_tokens: 256
+  stage_max_tokens:
+    image_extraction: 256
+    image_verification: 192
+    field_enrichment: 192
+    description_generation: 192
+  memory_limit_gb: 8
+policy:
+  require_image: true
+  vlm_selection: all
+  pass_ocr: false
+  field_enrichment: false
+  descriptions: false
+  image_verification: false
+  max_calls_per_record: 1
+budget:
+  retry_count: 0
+  max_rss_gb: 12

@@ -1,0 +1,81 @@
+seed: 42
+data_dir: ../../dataset
+image_dir: ../../dataset/product_images
+output_dir: outputs
+report_dir: reports
+model:
+  profile: competitive
+  visual_schema_version: visual-evidence-v2
+  compact_prompts: false
+  max_prompt_tokens: null
+  processor_max_pixels: null
+  processor_min_pixels: null
+  backend: mlx_vlm
+  path: ../../models/Qwen3-VL-4B-Instruct-4bit
+  quantisation_bits: 4
+  batch_size: 1
+  temperature: 0.0
+  max_tokens: 1600
+  stage_max_tokens:
+    image_extraction: 2400
+    image_verification: 2400
+    field_enrichment: 2200
+    description_generation: 1400
+  max_input_chars: 24000
+  image_max_side: 1024
+  max_images: 3
+  memory_limit_gb: 10
+policy:
+  require_image: false
+  ocr: true
+  vlm: true
+  retrieval: true
+  descriptions: true
+  field_enrichment: true
+  image_verification: true
+  vlm_selection: adaptive  # adaptive, all, off
+  min_text_chars: 350
+  min_ocr_chars: 80
+  min_supported_facts: 5
+  enrich_sparse_structured: true
+  max_vlm_records: 1157
+  max_calls_per_record: 8  # four stages when a high-risk visual panel needs a second read
+  max_ocr_images: 5000
+  pass_ocr: true
+ocr:
+  max_side: 2200
+  contrast: 1.0
+  rotations: [0, 90, 180, 270]
+  rotate_if_chars_below: 40
+  min_confidence: 0.80
+retrieval:
+  top_k: 5
+  min_score: 65
+  allow_exact_transfer: true
+  allow_family_transfer: true
+  family_min_score: 88
+  family_min_identity_tokens: 3
+  family_consensus: 2
+  shared_attributes: [application_area, packaging_type, packaging_material]
+verification:
+  minimum_confidence: 0.80
+  field_thresholds:
+    ingredient_information: 0.90
+    nutritional_information: 0.95
+    weight: 0.95
+    dimensions: 0.95
+  allow_uncorroborated_visual: true
+  visual_min_confidence: 0.94
+  visual_high_risk_confidence: 0.98
+  visual_require_second_read_high_risk: true
+  description_token_overlap: 0.65
+budget:
+  max_seconds: null  # unconfirmed competition cap; optional local operational limit
+  max_cost_usd: null
+  local_cost_per_hour_usd: 0.0  # set your all-in compute rate before a budget claim
+  max_rss_gb: 13
+  min_disk_gb: 2
+  retry_count: 1
+validation:
+  pseudo_size: 100
+  pseudo_images: true

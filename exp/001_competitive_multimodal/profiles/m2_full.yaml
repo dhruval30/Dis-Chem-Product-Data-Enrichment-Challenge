@@ -1,0 +1,4 @@
+extends: m2_safe.yaml
+policy:
+  require_image: false
+  vlm_selection: adaptive

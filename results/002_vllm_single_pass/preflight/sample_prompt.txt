@@ -1,0 +1,164 @@
+[system]
+You enrich one Dis-Chem product catalogue record into ten content fields for the online store.
+
+EVIDENCE
+- Use only the supplied record and the attached product images. Never add facts from general knowledge about the brand or the product.
+- Read the images carefully: product name, variant, size, claims, directions, ingredients, storage, nutrition panels and the pack form. Image text is valid evidence when it clearly belongs to this product.
+- If a fact is not supported, leave the field empty. Never write "N/A", "none", "unknown" or a placeholder.
+- Keep qualifiers ("may help", "up to", "approximately") and exact numbers and units.
+- When no description is supplied, write both descriptions from the product name, the catalogue category and what the images show. Say what the product is and what it is for. Do not invent features, ingredients or claims.
+
+FIELDS
+online_name: the supplied product name, keeping brand, product, variant and size. Only fix brand casing.
+short_description: one or two sentences (about 20 to 60 words) on what the product is and its main benefit. If a source short description is supplied, stay very close to its wording; only repair truncation and drop embedded specification lists. No bullets.
+long_description: two to six sentences. Start with the full product name and what it is or is for, then the key features, benefits, materials and how to use it, all from the evidence. Do not open with the same sentence as the short description. Do not include full ingredient lists, nutrition values or storage instructions. UK English, neutral tone.
+ingredient_information: if a full ingredient declaration is given, list every ingredient in source order exactly as written. Otherwise list the named key ingredients or actives the evidence mentions (for example "with vitamin E & organic almond oil" gives "vitamin E" and "organic almond oil"). Add allergen and "may contain" statements as separate items, worded as in the source.
+storage_instructions: each storage or keeping statement as written, for example "Store in a cool, dry place." or "Once opened, keep refrigerated."
+variant_attributes: shade = colour or shade of this item; flavour = flavour names; fragrance = scent names, or "fragrance-free"; other = other variant facts such as theme, character, age stage or size range.
+product_specifications:
+  pack_size: net quantity of the pack as value and unit (for example 200 / ml, 4 / pack, 60 / capsules, 1 / single).
+  application_area: body areas the product is for (Face, Lips, Cheeks, Hair, Body, Eyes, Skin, Nails and so on).
+  packaging_type: the pack form when stated or clearly visible (Bottle, Box, Tube, Jar, Pouch, Tub, Can, Bag, Blister pack, Sachet, Pump bottle, Spray bottle and so on).
+  packaging_material: packaging materials when stated.
+  other: one {attribute, value} per remaining explicit fact. Use snake_case attributes such as certification (one entry per claim, for example Vegan, Halaal, Gluten Free, Paraben Free, BPA Free, Dermatologically tested), recyclable_packaging, model, age_range, spf, skin_type, hair_type, material, fabric_composition, product_type, fragrance_type, top_notes, middle_notes, base_notes, preparation_state, shelf_life, power_source, capacity, colour, care_instructions.
+weight: product weight only when explicitly given (spec-table weight, "net weight", "weighs 150g"). Copy the value; keep the unit exactly as given, and leave the unit empty if none is given.
+dimensions: height, width and depth only when labelled as such. Copy the values; leave the unit empty if none is given. Never relabel length as depth.
+nutritional_information: only values from the supplied nutrition data or a legible nutrition panel. Keep the per 100 g/ml and per serving bases separate and never convert between them. Use nutrient names such as energy_kj, carbohydrate_g, total_sugar_g, dietary_fibre_g, total_fat_g, saturated_fat_g, protein_g, sodium_mg.
+
+Fields listed as not applicable must be left empty. Return only the JSON object.
+
+=====
+
+[user]
+RECORD
+Product name: CeraVe Foaming Cleanser 236ml
+Brand: Cerave
+Catalogue category: BEAUTY > FACECARE > GENERAL > CLEANSER/TONER
+Article type: Single article
+Source short description: Remove excess makeup, dirt and oil. Developed with dermatologists, the foaming gel formula of the cerave foaming cleanser gently cleanses the skin to remove excess makeup, dirt and oil. It contains 3 essential ceramides to help protect the skin barrier. Hyaluronic acid helps to retain the skin’s natural moisture while niacinamide calms the skin.
+Source product description:
+Developed with dermatologists, the foaming gel formula of the cerave foaming cleanser gently cleanses the skin to remove excess makeup, dirt and oil. It contains 3 essential ceramides to help protect the skin barrier. Hyaluronic acid helps to retain the skin’s natural moisture while niacinamide calms the skin.
+
+Key Features:
+• Removes excess oil: effectively cleanses and removes excess oil without disrupting the skin's natural barrier
+• Non-drying: contains hyaluronic acid to help retain the skin's natural moisture
+• Essential ceramides: formulated with 3 essential ceramides (1, 3, 6-ii) to help restore and maintain the skin’s natural barrier
+• Gentle formula: fragrance-free
+• Non-comedogenic
+• And non-irritating
+• Developed with dermatologists.
+
+Usage Instructions:
+• Use morning and evening. Apply to wet hands and massage into the skin, then rinse thoroughly.
+
+Storage: store in a cool, dry place away from direct sunlight.
+
+
+• Soap free.
+Size in product name: 236 ml
+Not applicable (leave empty): nutritional_information
+Images attached: none
+
+=====
+
+[assistant]
+{"online_name": "CeraVe Foaming Cleanser 236ml", "short_description": "A foaming gel cleanser that removes excess makeup, dirt and oil. It contains 3 essential ceramides to help protect the skin barrier; hyaluronic acid helps retain the skin’s natural moisture, while niacinamide calms the skin.", "long_description": "Developed with dermatologists, the foaming gel formula gently cleanses skin to remove excess makeup, dirt and oil. It removes excess oil without disrupting the skin's natural barrier; 3 essential ceramides (1, 3, 6-ii) help restore and maintain the skin’s natural barrier. Hyaluronic acid helps retain the skin’s natural moisture, while niacinamide calms the skin. The cleanser is non-drying, fragrance-free, non-comedogenic, non-irritating and soap free. Use morning and evening: apply to wet hands, massage into the skin, then rinse thoroughly.", "ingredient_information": ["3 essential ceramides", "Hyaluronic acid", "niacinamide"], "storage_instructions": ["store in a cool, dry place away from direct sunlight."], "variant_attributes": {"shade": [], "flavour": [], "fragrance": ["fragrance-free"], "other": []}, "product_specifications": {"pack_size": {"value": "236", "unit": "millilitre (ml)"}, "application_area": ["Face"], "packaging_type": "", "packaging_material": [], "other": [{"attribute": "certification", "value": "Fragrance Free"}, {"attribute": "formulation", "value": "foaming gel"}]}, "weight": {"value": "", "unit": ""}, "dimensions": {"height": "", "width": "", "depth": "", "unit": ""}, "nutritional_information": {"serving_size": {"value": "", "unit": ""}, "per_100g": [], "per_serving": []}}
+
+=====
+
+[user]
+RECORD
+Product name: Cybex Solution S2 I-Fix Deep Black 6.2kg
+Brand: Cybex
+Catalogue category: BABY HARDWARE > TRAVEL > CAR SEATS > 1/2/3
+Article type: Single article
+Source short description: The cybex solution s2 i-fix in deep black is a high-back booster car seat designed to grow with children from approximately 3 to 12 years of age. It features a patented reclining headrest and an advanced linear side-impact protection system to ensure safety and comfort during travel.
+Source product description:
+Engineered to adapt as your child grows, the cybex solution s2 i-fix deep black 6.2kg accommodates children from 100 cm to 150 cm tall. It incorporates a patented reclining headrest that helps prevent the child's head from tipping forward while sleeping, keeping it securely within the safety zone. Coupled with an optimized integrated linear side-impact protection system plus and an energy-absorbing shell, it reduces the force of a side-impact collision. Additional comfort features include a 12-position height-adjustable headrest that can be easily adjusted with one hand, and an integrated air ventilation system to maintain a pleasant seating temperature on warm days. Installation is simplified using isofix connect for enhanced stability and safety. Specifications:, brand: cybex, model: solution s2 i-fix, colour: deep black, age range: from approximately 3 years up to 12 years, child height compatibility: 100 cm – 150 cm, product weight: 6.2 kg, dimensions: 40.5 cm (length) x 50 cm (width) x 61 cm - 81 cm (height), safety certification: un r129/03, installation type: isofix and/or 3-point vehicle seat belt.
+
+Usage Instructions:
+• Install forward-facing using the vehicle's 3-point automatic seat belt, with or without the isofix connectors. Adjust the 12-position headrest to fit the height of the child as they grow. Fabric covers are machine washable at 30°c.
+Size in product name: 6.2 kg
+Not applicable (leave empty): ingredient_information, nutritional_information
+Images attached: none
+
+=====
+
+[assistant]
+{"online_name": "Cybex Solution S2 I-Fix Deep Black 6.2kg", "short_description": "A high-back booster car seat designed to grow with children from approximately 3 to 12 years of age, with a patented reclining headrest and an advanced linear side-impact protection system.", "long_description": "The Cybex Solution S2 I-Fix Deep Black is a high-back booster car seat for children from approximately 3 years up to 12 years and 100 cm to 150 cm tall. Its patented reclining headrest helps prevent a sleeping child’s head from tipping forward and keeps it securely within the safety zone. The integrated linear side-impact protection system and energy-absorbing shell reduce the force of a side-impact collision. The 12-position height-adjustable headrest can be adjusted with one hand, and integrated air ventilation maintains a pleasant seating temperature on warm days. Install forward-facing using the vehicle’s 3-point automatic seat belt, with or without the ISOFIX connectors. ISOFIX Connect simplifies installation and enhances stability and safety.", "ingredient_information": [], "storage_instructions": [], "variant_attributes": {"shade": ["Deep Black"], "flavour": [], "fragrance": [], "other": []}, "product_specifications": {"pack_size": {"value": "", "unit": ""}, "application_area": [], "packaging_type": "", "packaging_material": [], "other": [{"attribute": "model", "value": "Solution S2 I-Fix"}, {"attribute": "safety_certification", "value": "UN R129/03"}, {"attribute": "installation_type", "value": "ISOFIX and/or 3-point vehicle seat belt"}, {"attribute": "age_range", "value": "approximately 3 to 12 years"}, {"attribute": "child_height_range", "value": "100 cm to 150 cm"}, {"attribute": "care_instructions", "value": "Fabric covers are machine washable at 30°C"}]}, "weight": {"value": "6.2", "unit": "kg"}, "dimensions": {"height": "61 cm - 81 cm", "width": "50 cm", "depth": "", "unit": "cm"}, "nutritional_information": {"serving_size": {"value": "", "unit": ""}, "per_100g": [], "per_serving": []}}
+
+=====
+
+[user]
+RECORD
+Product name: Labello Caring Beauty Rose SPF 30 3-In-1 Lip & Cheek Balm 4,8g
+Brand: Labello
+Catalogue category: PERSONAL CARE > BODY CARE > LIP TREATMENTS > EVERYDAY
+Article type: Single article
+Source short description: The buttery 3in1 formula for lips and cheeks delivers an intense colour without drying out, provides 24-hour moisture and helps to protect against collagen loss thanks to sun protection with SPF 30.
+Source product description:
+The buttery 3in1 formula for lips and cheeks delivers an intense colour without drying out, provides 24-hour moisture and helps to protect against collagen loss thanks to sun protection with SPF 30.
+
+Key Features:
+• With vitamin e & organic almond oil
+• Rich colour
+• Last for 24 hours
+• UV protection
+• Buildable colour from soft to intense
+• Long-lasting moisture for soft, smooth lips
+• Skin compatibility dermatologically approved
+• Helps to protect against sun-induced collagen loss (in-vitro test). Collagen is known to keep lips plump and firm.
+
+Storage: store in a cool, dry place.
+
+
+• Dermatologically approved.
+Specifications (supplied; hidden cells removed):
+- Weight: 19
+- Height: 108
+- Depth: 18
+- Width: 69
+- Application Area: Lip, Cheeks
+- Packaging Type: Box
+- Recyclable Packaging: Yes
+Size in product name: 4.8 g
+Not applicable (leave empty): nutritional_information
+Images attached: none
+
+=====
+
+[assistant]
+{"online_name": "Labello Caring Beauty Rose SPF 30 3-in-1 Lip & Cheek Balm 4,8g", "short_description": "The buttery 3in1 formula for lips and cheeks delivers an intense colour without drying out, provides 24-hour moisture and helps to protect against collagen loss thanks to sun protection with SPF 30.", "long_description": "Labello Caring Beauty Rose SPF 30 3-In-1 Lip & Cheek Balm 4,8g is a buttery 3-in-1 formula for lips and cheeks. It gives rich, buildable colour from soft to intense and 24-hour moisture, with vitamin E and organic almond oil. It helps protect against sun-induced collagen loss (in-vitro test) and is dermatologically approved.", "ingredient_information": ["vitamin e", "organic almond oil"], "storage_instructions": ["store in a cool, dry place."], "variant_attributes": {"shade": ["Rose"], "flavour": [], "fragrance": [], "other": []}, "product_specifications": {"pack_size": {"value": "4.8", "unit": "gram (g)"}, "application_area": ["Lip", "Cheeks"], "packaging_type": "Box", "packaging_material": [], "other": [{"attribute": "recyclable_packaging", "value": "Yes"}, {"attribute": "spf", "value": "SPF 30"}]}, "weight": {"value": "19", "unit": ""}, "dimensions": {"height": "108", "width": "69", "depth": "18", "unit": ""}, "nutritional_information": {"serving_size": {"value": "", "unit": ""}, "per_100g": [], "per_serving": []}}
+
+=====
+
+[user]
+RECORD
+Product name: Natural Products Moringa Powder 150g
+Brand: Natural Products
+Catalogue category: VITAMINS / HERBAL > VITAMINS / HERBAL > TRADITIONAL HEALTH > MORINGA
+Article type: Single article
+Source short description: Boost your daily fruit and vegetable intake with our natural products moringa powder. This versatile, mild-tasting powder is perfect for adding to smoothies, soups, or dips, and is vegan, gluten-free, and packed with nutrients.
+Source product description:
+This bright green powder can contribute to your recommended daily intake of fruit and vegetables. It has a mild peppery flavour. Add to juice, smoothies, yoghurt, salad, soups, stews or cooked food. It is ideal for adding to dips, for example guacamole, as taking it with a source of fat can improve vitamin a absorption. The product is vegan, gluten and wheat free, dairy free, non-gmo, non-irradiated, refined sugar free, preservative free and additive free. It has a shelf life of 12 months and weighs 150g. The ingredients are 100% organically grown moringa powder from malawi. Although it contains no allergens, it is packed in a facility that may contain soy and tree nuts. Store in a cool, dry place and reseal the bag immediately after opening.
+Size in product name: 150 g
+Images attached: none
+
+=====
+
+[assistant]
+{"online_name": "Natural Products Moringa Powder 150g", "short_description": "Moringa powder with a mild peppery flavour, for adding to juice, smoothies, yoghurt, salad, soups, stews, cooked food or dips.", "long_description": "Natural Products Moringa Powder is a bright green powder made from 100% organically grown moringa powder from Malawi. It can contribute to the recommended daily intake of fruit and vegetables and has a mild peppery flavour. Add it to juice, smoothies, yoghurt, salad, soups, stews or cooked food; it can also be added to dips such as guacamole, and taking it with a source of fat can improve vitamin A absorption. It is vegan, gluten and wheat free, dairy free, non-GMO, non-irradiated, refined sugar free, preservative free and additive free. It has a shelf life of 12 months and weighs 150g. Store in a cool, dry place and reseal the bag immediately after opening.", "ingredient_information": ["100% organically grown moringa powder from malawi", "may contain soy and tree nuts"], "storage_instructions": ["Store in a cool, dry place and reseal the bag immediately after opening."], "variant_attributes": {"shade": [], "flavour": ["mild peppery flavour"], "fragrance": [], "other": []}, "product_specifications": {"pack_size": {"value": "150", "unit": "g"}, "application_area": [], "packaging_type": "bag", "packaging_material": [], "other": [{"attribute": "certification", "value": "Vegan"}, {"attribute": "certification", "value": "Gluten Free"}, {"attribute": "certification", "value": "Dairy Free"}, {"attribute": "certification", "value": "Non-GMO"}, {"attribute": "shelf_life", "value": "12 months"}]}, "weight": {"value": "150", "unit": "g"}, "dimensions": {"height": "", "width": "", "depth": "", "unit": ""}, "nutritional_information": {"serving_size": {"value": "", "unit": ""}, "per_100g": [], "per_serving": []}}
+
+=====
+
+[user]
+RECORD
+Product name: Tweety Baby Cot Comforter Pink and Yellow
+Brand: Tweety
+Catalogue category: BABY HOME AND SAFETY > NURSERY BEDDING AND LINEN > BEDDING > BEDDING AND DUVET SE
+Article type: Single article
+Source short description: This tweety baby cot comforter in pink and yellow is made from soft, gentle materials to soothe and comfort your little one. Featuring the beloved tweety bird, it adds a touch of fun to your baby's sleep space. Perfect for cuddling and creating a sense of security in the cot.
+Source product description:
+The tweety baby cot comforter in pink and yellow is designed to soothe and comfort your little one. Made with soft, gentle materials, it is perfect for cuddling and creating a sense of security in the cot. The comforter's charming design features tweety bird, adding a touch of fun to your baby's sleep space. This comforter is sure to become a cherished bedtime companion.
+Not applicable (leave empty): ingredient_information, nutritional_information
+Images attached: 1

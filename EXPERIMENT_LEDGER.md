@@ -6,4 +6,5 @@ Add the entry in the same commit as the experiment code and its results.
 
 | Experiment | Description | Local score | LB score |
 | --- | --- | --- | --- |
-| | | | |
+| 001_competitive_multimodal | Evidence-grounded catalogue enrichment with deterministic extraction, RapidOCR, local Qwen3-VL, retrieval, verification and M2-safe inference | not scored | not submitted |
+| 002_vllm_single_pass | Single-pass VLM (Qwen3.5-9B FP8 via vLLM) with deterministic spec, nutrition and name parsing, recall-oriented merge and a silver validation set | pending | pending |
